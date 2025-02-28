@@ -1,6 +1,6 @@
 ---
 - name: Deploy Nginx
-  hosts: all
+  hosts: web2
   become: yes
   roles:
     - nginx
