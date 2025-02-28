@@ -1,0 +1,14 @@
+---
+nginx_package:
+  RedHat: "nginx"
+  Debian: "nginx"
+  Ubuntu: "nginx"
+  Amazon: "nginx"
+                
+nginx_service:
+  RedHat: "nginx"
+  Debian: "nginx"
+  Ubuntu: "nginx"
+  Amazon: "nginx"
+
+# vars file for nginx

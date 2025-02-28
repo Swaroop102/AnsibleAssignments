@@ -1,0 +1,5 @@
+---
+nginx_listen_port: 80
+nginx_user: "www-data"
+
+# defaults file for nginx

@@ -1,0 +1,33 @@
+---
+- name: Install Nginx on RedHat-based OS
+  ansible.builtin.yum:
+    name: "{{ nginx_package[ansible_os_family] }}"
+    state: present
+  when: ansible_os_family == "RedHat"
+                      
+- name: Install Nginx on Debian-based OS
+  ansible.builtin.apt:
+    name: "{{ nginx_package[ansible_os_family] }}"
+    state: present
+    update_cache: yes
+  when: ansible_os_family in ["Debian", "Ubuntu"]
+                          
+- name: Install Nginx on Amazon Linux
+  ansible.builtin.yum:
+    name: "{{ nginx_package[ansible_os_family] }}"
+    state: present
+  when: ansible_os_family == "Amazon"
+                      
+- name: Deploy Nginx configuration
+  ansible.builtin.template:
+    src: nginx.conf.j2
+    dest: /etc/nginx/nginx.conf
+  notify: restart nginx
+                      
+- name: Ensure Nginx service is running and enabled
+  ansible.builtin.service:
+    name: "{{ nginx_service[ansible_os_family] }}"
+    state: started
+    enabled: yes
+ 
+# tasks file for nginx
