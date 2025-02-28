@@ -1,2 +1,2 @@
 [web_servers]
-web2 ansible_host=3.91.14.137 ansible_user=ubuntu ansible_ssh_private_key_file=/home/teja/Ngnix-Jenkins.pem ansible_python_interpreter=/usr/bin/python3
+web2 ansible_host=3.91.14.137 ansible_user=ubuntu ansible_ssh_private_key_file=Ngnix-Jenkins.pem ansible_python_interpreter=/usr/bin/python3
